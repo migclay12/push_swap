@@ -6,7 +6,7 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 19:49:52 by miggonza          #+#    #+#             */
-/*   Updated: 2023/04/12 19:54:33 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/04/12 20:50:49 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,19 @@ void	ft_lstadd_back2(t_list2 **lst, t_list2 *new)
 	}
 	recive = ft_lstlast2(*lst);
 	recive->next = new;
+}
+
+int	ft_lstsize2(t_list2 *lst)
+{
+	int	i;
+	t_list2	*temp;
+
+	temp = lst;
+	i = 0;
+	while (temp)
+	{
+		temp = temp->next;
+		i++;
+	}
+	return (i);
 }

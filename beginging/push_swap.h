@@ -6,7 +6,7 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 19:49:55 by miggonza          #+#    #+#             */
-/*   Updated: 2023/04/12 19:56:56 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/04/12 20:48:45 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,7 @@ void	ft_printerror(char *error);
 int		ft_check_rep(int num, char **argv, int i);
 int		ft_isnum(char *num);
 void	ft_get_num(int argc, char **argv);
+
+int	ft_lstsize2(t_list2 *lst);
 
 #endif

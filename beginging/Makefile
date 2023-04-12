@@ -18,7 +18,7 @@ $(OBJ): $(SRC)
 
 #COMPILE WITH ARGUMENTS
 exe: all
-		@./$(NAME) 1 2 3 4 5
+		@./$(NAME) 23 43
 
 clean:
 		@rm -rf $(OBJ)
