@@ -1,28 +1,53 @@
-#include <stdio.h>
-#include "../libft/libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/12 19:50:01 by miggonza          #+#    #+#             */
+/*   Updated: 2023/04/12 19:55:18 by miggonza         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void get_num(char **argv)
+#include "push_swap.h"
+
+void	ft_sort_num(t_list2 **stack_a, int argc, char **argv)
 {
-	char **temp;
-	char **idk;
+	t_list2	*new;
+	char	**idk;
+	int		i;
 
-	temp = argv;
-	while (!argv)
+	i = 0;
+	if (argc == 2)
+		idk = ft_split(argv[1], ' ');
+	else
 	{
-		idk = ft_split(temp[1], ' ');
-		printf("%s\n", idk[1]);
+		i = 1;
+		idk = argv;
 	}
-	
-	//SPLIT && ATOI && ITOA
-	//ATOI CHAR TO INT
+	while (idk[i])
+	{
+		new = ft_lstnew2(ft_atoi(idk[i]));
+		ft_lstadd_back2(stack_a, new);
+		printf("%d\n", new->number);
+		i++;
+	}
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	if (argc != 2)
-		printf("\n");
-	else
-		get_num(argv);
+	t_list2	**stack_a;
+	t_list2	**stack_b;
+
+	if (argc < 2)
+		ft_printerror("ERROR ARG");
+	stack_a = (t_list2 **)malloc(sizeof(t_list2));
+	stack_b = (t_list2 **)malloc(sizeof(t_list2));
+	*stack_a = NULL;
+	*stack_b = NULL;
+	ft_get_num(argc, argv);
+	ft_sort_num(stack_a, argc, argv);
 	//printf("%s", argv[1]);
-	return 0;
+	return (0);
 }

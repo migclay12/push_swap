@@ -1,5 +1,5 @@
 NAME = push_swap
-SRC = main.c
+SRC = main.c lists.c checknum.c
 
 OBJ = $(SRC:.c=.o)
 #-fsanitize=address
@@ -11,13 +11,14 @@ all: ${NAME}
 
 ${NAME}: ${OBJ}
 		make -C $(LIB)
-		@gcc $(FLAGS) $(OBJ) $(NAME) $(LIB)/libft.a
+		@gcc $(FLAGS) $(OBJ) -o $(NAME) $(LIB)/libft.a
 
 $(OBJ): $(SRC)
 		@gcc $(FLAGS) -c $(SRC)
 
+#COMPILE WITH ARGUMENTS
 exe: all
-		@./$(NAME)
+		@./$(NAME) 1 2 3 4 5
 
 clean:
 		@rm -rf $(OBJ)
