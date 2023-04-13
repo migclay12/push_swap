@@ -6,7 +6,7 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 19:50:01 by miggonza          #+#    #+#             */
-/*   Updated: 2023/04/12 21:46:18 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/04/13 15:33:52 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	ft_add_index(t_list2 **stack_a)
 			moving = moving->next;
 		}
 		head->index = i;
-		printf("%d", head->index);
+		//printf("%d", head->index);
 		head = head->next;
 	}
 }
@@ -53,9 +53,24 @@ void	ft_sort_num(t_list2 **stack_a, int argc, char **argv)
 	{
 		new = ft_lstnew2(ft_atoi(idk[i]));
 		ft_lstadd_back2(stack_a, new);
-		printf("%d\n", new->number);
+		//printf("%d\n", new->number);
 		i++;
 	}
+}
+
+void	ft_print_stack(t_list2 **stack)
+{
+	t_list2	*head;
+
+	head = *stack;
+	if (!head)
+		printf("empty");
+	while(head)
+	{
+		printf("%d(%d)-", head->number, head->index);
+		head = head->next;
+	}
+	printf("\n");
 }
 
 int	main(int argc, char **argv)
@@ -72,7 +87,16 @@ int	main(int argc, char **argv)
 	ft_get_num(argc, argv);
 	ft_sort_num(stack_a, argc, argv);
 	ft_add_index(stack_a);
+
+	ft_print_stack(stack_a);
+	ft_print_stack(stack_b);
+	//ft_swap(stack_a);
+	ft_push(stack_b, stack_a);
+	//ft_rotate(stack_a);
+	//ft_reverse_rotate(stack_a);
+	ft_print_stack(stack_a);
+	ft_print_stack(stack_b);
+	
 	//printf("%d", ft_lstsize2(*stack_a));
-	//printf("%s", argv[1]);
 	return (0);
 }
