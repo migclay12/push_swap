@@ -6,7 +6,7 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 13:11:42 by miggonza          #+#    #+#             */
-/*   Updated: 2023/04/13 14:41:50 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/04/13 21:08:58 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,39 +21,50 @@ void	ft_swap(t_list2 **stack)
 
 	head = *stack;
 	next = head->next;
-
+	
 	num = head->number;
 	index = head->index;
 	head->number = next->number;
 	head->index = next->index;
 	next->number = num;
 	next->index	= index;
+	
+	/*
+	t_list2	*temp;
+	head = *stack;
+	next = head->next;
+	
+	temp = head;
+	head = head->next;
+	temp->next = head;
+	*stack = temp;
+	*/
 }
 
-void	ft_push(t_list2 **stack_a, t_list2 **stack_b)
+void	ft_push(t_list2 **stack_to, t_list2 **stack_from)
 {
 	t_list2	*head_a;
 	t_list2	*head_b;
 	t_list2	*temp;
 
-	if(stack_b == NULL)
+	if(stack_from == NULL)
 		return ;
-	head_a = *stack_a;
-	head_b = *stack_b;
+	head_a = *stack_to;
+	head_b = *stack_from;
 
 	temp = head_b;
 	head_b = head_b->next;
-	*stack_b = head_b;
+	*stack_from = head_b;
 	if (!head_a)
 	{
 		head_a = temp;
 		head_a->next = NULL;
-		*stack_a = head_a;
+		*stack_to = head_a;
 	}
 	else
 	{
 		temp->next = head_a;
-		*stack_a = temp;
+		*stack_to = temp;
 	}
 }
 

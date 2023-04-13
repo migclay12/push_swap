@@ -6,7 +6,7 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 19:50:01 by miggonza          #+#    #+#             */
-/*   Updated: 2023/04/13 15:33:52 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/04/13 21:29:40 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,11 +58,15 @@ void	ft_sort_num(t_list2 **stack_a, int argc, char **argv)
 	}
 }
 
-void	ft_print_stack(t_list2 **stack)
+void	ft_print_stack(char c, t_list2 **stack)
 {
 	t_list2	*head;
 
 	head = *stack;
+	if (c == 'a')
+		printf("Stack_a: ");
+	else
+		printf("Stack_b: ");
 	if (!head)
 		printf("empty");
 	while(head)
@@ -71,6 +75,15 @@ void	ft_print_stack(t_list2 **stack)
 		head = head->next;
 	}
 	printf("\n");
+}
+
+void	ft_length(t_list2 **stack_a)
+{
+	if (ft_lstsize2(*stack_a) <= 3)
+		ft_test3(stack_a);
+	else
+		printf("FUCK\n");
+
 }
 
 int	main(int argc, char **argv)
@@ -88,14 +101,17 @@ int	main(int argc, char **argv)
 	ft_sort_num(stack_a, argc, argv);
 	ft_add_index(stack_a);
 
-	ft_print_stack(stack_a);
-	ft_print_stack(stack_b);
+	ft_print_stack('a', stack_a);
+	ft_print_stack('b', stack_b);
+
+	ft_length(stack_a);
+
+	ft_print_stack('a', stack_a);
+	ft_print_stack('b', stack_b);
 	//ft_swap(stack_a);
-	ft_push(stack_b, stack_a);
+	//ra(stack_a);
 	//ft_rotate(stack_a);
 	//ft_reverse_rotate(stack_a);
-	ft_print_stack(stack_a);
-	ft_print_stack(stack_b);
 	
 	//printf("%d", ft_lstsize2(*stack_a));
 	return (0);

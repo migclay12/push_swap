@@ -1,5 +1,7 @@
 NAME = push_swap
-SRC = main.c lists.c checknum.c instructions.c
+SRC = main.c lists.c checknum.c instructions.c \
+		instructions_a.c instructions_b.c instructions_ab.c \
+		test.c
 
 OBJ = $(SRC:.c=.o)
 #-fsanitize=address
@@ -18,7 +20,7 @@ $(OBJ): $(SRC)
 
 #COMPILE WITH ARGUMENTS
 exe: all
-		@./$(NAME) 1 2 3 4 5
+		@./$(NAME) 2 1 3
 
 clean:
 		@rm -rf $(OBJ)
