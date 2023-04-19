@@ -1,13 +1,13 @@
 NAME = push_swap
-SRC = main.c lists.c checknum.c instructions.c \
-		instructions_a.c instructions_b.c instructions_ab.c \
-		test.c
+SRC = beginging/main.c beginging/lists.c beginging/checknum.c beginging/instructions.c \
+		beginging/instructions_a.c beginging/instructions_b.c beginging/instructions_ab.c \
+		beginging/test.c
 
 OBJ = $(SRC:.c=.o)
 #-fsanitize=address
 FLAGS = -Wall -Wextra -Werror
 
-LIB = ../libft
+LIB = libft
 
 all: ${NAME}
 
@@ -15,12 +15,12 @@ ${NAME}: ${OBJ}
 		make -C $(LIB)
 		@gcc $(FLAGS) $(OBJ) -o $(NAME) $(LIB)/libft.a
 
-$(OBJ): $(SRC)
-		@gcc $(FLAGS) -c $(SRC)
+#$(OBJ): $(SRC)
+#		@gcc $(FLAGS) -c $(SRC)
 
 #COMPILE WITH ARGUMENTS
 exe: all
-		@./$(NAME) 2 1 3
+		@./$(NAME) 3 5 4 2 1
 
 clean:
 		@rm -rf $(OBJ)

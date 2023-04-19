@@ -6,7 +6,7 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 19:49:58 by miggonza          #+#    #+#             */
-/*   Updated: 2023/04/12 20:46:52 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/04/19 21:37:20 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	ft_printerror(char *error)
 {
 	printf("%s\n", error);
+	//ft_putendl_fd(error, 1);
 	exit(0);
 }
 
@@ -69,9 +70,6 @@ void	ft_get_num(int argc, char **argv)
 			ft_printerror("ERROR SIZE");
 		if (ft_check_rep(temp, idk, i))
 			ft_printerror("ERROR REP");
-		//printf("%s\n", idk[i]);
-		//printf("%ld\n", temp);
 		i++;
 	}
-	//free(idk);
 }
