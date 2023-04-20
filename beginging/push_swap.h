@@ -6,7 +6,7 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 19:49:55 by miggonza          #+#    #+#             */
-/*   Updated: 2023/04/19 19:37:13 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/04/20 18:15:40 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	rra(t_list2 **stack_a);
 void	rrb(t_list2 **stack_b);
 void	rrr(t_list2 **stack_a, t_list2 **stack_b);
 
-int		is_sorted(t_list2 **stack);
+int		ft_sorted(t_list2 **stack);
 
 void	ft_test3(t_list2 **stack_a);
 void	ft_test5(t_list2 **stack_a, t_list2 **stack_b);

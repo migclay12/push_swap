@@ -21,6 +21,10 @@ ${NAME}: ${OBJ}
 #COMPILE WITH ARGUMENTS
 exe: all
 		@./$(NAME) 3 5 4 2 1
+#5 3 4 2 1
+#2 4 3 1 5
+#2 4 3 5 1
+#
 
 clean:
 		@rm -rf $(OBJ)

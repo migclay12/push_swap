@@ -6,7 +6,7 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 19:50:01 by miggonza          #+#    #+#             */
-/*   Updated: 2023/04/19 21:28:40 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/04/20 17:49:57 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ int	main(int argc, char **argv)
 	ft_sort_num(stack_a, argc, argv);
 	ft_add_index(stack_a);
 
-	if (is_sorted(stack_a))
+	if (ft_sorted(stack_a))
 		return(0);
 	//ft_print_stack('a', stack_a);
 	//ft_print_stack('b', stack_b);

@@ -6,11 +6,57 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 20:59:11 by miggonza          #+#    #+#             */
-/*   Updated: 2023/04/19 21:31:04 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/04/20 21:39:50 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	ft_sorted(t_list2 **stack)
+{
+	t_list2	*head;
+
+	head = *stack;
+	while (head && head->next)
+	{
+		if (head->number > head->next->number)
+			return (0);
+		head = head->next;
+	}
+	return (1);
+}
+
+int	ft_find_min(t_list2 **stack)
+{
+	t_list2	*head;
+	int		min;
+
+	head = *stack;
+	min = head->index;
+	while (head != NULL)
+	{
+		if (head->index < min)
+			min = head->index;
+		head = head->next;
+	}
+	return (min);
+}
+
+int	ft_find_max(t_list2 **stack)
+{
+	t_list2	*head;
+	int		max;
+
+	head = *stack;
+	max = head->index;
+	while (head != NULL)
+	{
+		if (head->index > max)
+			max = head->index;
+		head = head->next;
+	}
+	return (max);
+}
 
 void	ft_test3(t_list2 **stack_a)
 {
@@ -38,20 +84,6 @@ void	ft_test3(t_list2 **stack_a)
 		rra(stack_a);
 }
 
-int	is_sorted(t_list2 **stack)
-{
-	t_list2	*head;
-
-	head = *stack;
-	while (head && head->next)
-	{
-		if (head->number > head->next->number)
-			return (0);
-		head = head->next;
-	}
-	return (1);
-}
-
 void	ft_test5(t_list2 **stack_a, t_list2 **stack_b)
 {
 	t_list2	*head;
@@ -63,18 +95,9 @@ void	ft_test5(t_list2 **stack_a, t_list2 **stack_b)
 	//ft_print_stack('a', stack_a);
 	pa(stack_a, stack_b);
 	ft_test3(stack_a);
-	/*
-	while (!is_sorted(stack_a))
-	{
-		//ft_print_stack('a', stack_a);
-		pb(stack_b, stack_a);
-		ft_test3(stack_a);
-		pa(stack_a, stack_b);
-	}
-	*/
-	//ft_print_stack('a', stack_a);
+
 	pa(stack_a, stack_b);
 	ft_test3(stack_a);
-	if (!is_sorted(stack_a))
+	if (!ft_sorted(stack_a))
 		ft_test5(stack_a, stack_b);
 }
