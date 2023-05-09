@@ -6,7 +6,7 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 19:49:52 by miggonza          #+#    #+#             */
-/*   Updated: 2023/04/13 21:11:05 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/05/09 12:29:17 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,8 @@ int	ft_lstsize2(t_list2 *lst)
 	int	i;
 	t_list2	*temp;
 
+	if (!lst)
+		return (0);
 	temp = lst;
 	i = 0;
 	while (temp)

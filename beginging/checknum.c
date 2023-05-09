@@ -6,7 +6,7 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 19:49:58 by miggonza          #+#    #+#             */
-/*   Updated: 2023/04/19 21:37:20 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/05/09 13:27:56 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ int	ft_isnum(char *num)
 	int	i;
 
 	i = 0;
+	//if (num[0] == '-' && num[1] == ' ')
+	//	return (0);
 	if (num[0] == '-')
 		i++;
 	while (num[i])
@@ -66,10 +68,10 @@ void	ft_get_num(int argc, char **argv)
 		temp = ft_atoi(idk[i]);
 		if (!ft_isnum(idk[i]))
 			ft_printerror("ERROR IS NUM");
-		if (temp > 2147483647 || temp < -2147483648)
-			ft_printerror("ERROR SIZE");
 		if (ft_check_rep(temp, idk, i))
 			ft_printerror("ERROR REP");
+		if (temp > 2147483647 || temp < -2147483648)
+			ft_printerror("ERROR SIZE");
 		i++;
 	}
 }

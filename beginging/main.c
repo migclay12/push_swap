@@ -6,7 +6,7 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 19:50:01 by miggonza          #+#    #+#             */
-/*   Updated: 2023/04/20 17:49:57 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/05/09 12:35:48 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ void	ft_length(t_list2 **stack_a, t_list2 **stack_b)
 	else if (ft_lstsize2(*stack_a) == 5)
 		ft_test5(stack_a, stack_b);
 	else
-		printf("FUCK\n");
+		ft_testall(stack_a, stack_b);
 
 }
 //MAKE SORT 2
