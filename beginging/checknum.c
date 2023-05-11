@@ -6,7 +6,7 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 19:49:58 by miggonza          #+#    #+#             */
-/*   Updated: 2023/05/11 16:26:15 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/05/11 17:11:20 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 
 void	ft_printerror(char *error)
 {
-	printf("%s\n", error);
-	//ft_putendl_fd(error, 1);
+	ft_printf("%s\n", error);
 	exit(0);
 }
 
@@ -36,8 +35,6 @@ int	ft_isnum(char *num)
 	int	i;
 
 	i = 0;
-	//if (num[0] == '-' && num[1] == ' ')
-	//	return (0);
 	if ((num[0] == '-' || num[0] == '+') && (ft_strlen(num) == 1))
 		return (0);
 	else if (num[0] == '-' || num[0] == '+')
@@ -72,8 +69,9 @@ void	ft_get_num(int argc, char **argv)
 			ft_printerror("ERROR IS NUM");
 		if (ft_check_rep(temp, idk, i))
 			ft_printerror("ERROR REP");
-		//if (temp > 2147483647 || temp < -2147483648)
-		//	ft_printerror("ERROR SIZE");
 		i++;
 	}
 }
+
+	//if (temp > 2147483647 || temp < -2147483648)
+	//	ft_printerror("ERROR SIZE");

@@ -6,11 +6,20 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 13:11:42 by miggonza          #+#    #+#             */
-/*   Updated: 2023/05/11 15:39:36 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/05/11 17:08:50 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+	// t_list2	*temp;
+	// head = *stack;
+	// next = head->next;
+
+	// temp = head;
+	// head = head->next;
+	// temp->next = head;
+	// *stack = temp;
 
 void	ft_swap(t_list2 **stack)
 {
@@ -27,17 +36,6 @@ void	ft_swap(t_list2 **stack)
 	head->index = next->index;
 	next->number = num;
 	next->index = index;
-
-	/*
-	t_list2	*temp;
-	head = *stack;
-	next = head->next;
-	
-	temp = head;
-	head = head->next;
-	temp->next = head;
-	*stack = temp;
-	*/
 }
 
 void	ft_push(t_list2 **stack_to, t_list2 **stack_from)

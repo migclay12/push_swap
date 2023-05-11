@@ -6,7 +6,7 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 19:50:01 by miggonza          #+#    #+#             */
-/*   Updated: 2023/05/11 16:55:23 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/05/11 17:23:30 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,7 @@ void	ft_length(t_list2 **stack_a, t_list2 **stack_b)
 }
 
 //REMOVE LIST1
+//CHANGE WRITE TO PRINTF IN INSTRUCTIONS??
 int	main(int argc, char **argv)
 {
 	t_list2	**stack_a;
@@ -102,13 +103,11 @@ int	main(int argc, char **argv)
 	ft_get_num(argc, argv);
 	ft_sort_num(stack_a, argc, argv);
 	ft_add_index(stack_a);
-
 	if (ft_sorted(stack_a))
 		return (0);
-
 	ft_length(stack_a, stack_b);
+	return (0);
+}
 
 	//ft_print_stack('a', stack_a);
 	//ft_print_stack('b', stack_b);
-	return (0);
-}
