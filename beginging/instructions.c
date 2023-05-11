@@ -6,7 +6,7 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 13:11:42 by miggonza          #+#    #+#             */
-/*   Updated: 2023/04/19 16:54:27 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/05/11 15:39:36 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,13 @@ void	ft_swap(t_list2 **stack)
 
 	head = *stack;
 	next = head->next;
-	
 	num = head->number;
 	index = head->index;
 	head->number = next->number;
 	head->index = next->index;
 	next->number = num;
-	next->index	= index;
-	
+	next->index = index;
+
 	/*
 	t_list2	*temp;
 	head = *stack;
@@ -47,11 +46,10 @@ void	ft_push(t_list2 **stack_to, t_list2 **stack_from)
 	t_list2	*head_b;
 	t_list2	*temp;
 
-	if(stack_from == NULL)
+	if (stack_from == NULL)
 		return ;
 	head_a = *stack_to;
 	head_b = *stack_from;
-
 	temp = head_b;
 	head_b = head_b->next;
 	*stack_from = head_b;
@@ -75,7 +73,6 @@ void	ft_rotate(t_list2 **stack)
 
 	head = *stack;
 	tail = ft_lstlast2(head);
-
 	*stack = head->next;
 	head->next = NULL;
 	tail->next = head;
@@ -83,15 +80,14 @@ void	ft_rotate(t_list2 **stack)
 
 void	ft_reverse_rotate(t_list2 **stack)
 {
-	t_list2 *head;
+	t_list2	*head;
 	t_list2	*tail;
 
 	head = *stack;
 	tail = ft_lstlast2(head);
-
 	while (head)
 	{
-		if(head->next->next == NULL)
+		if (head->next->next == NULL)
 		{
 			head->next = NULL;
 			break ;

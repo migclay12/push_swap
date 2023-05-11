@@ -6,7 +6,7 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 19:49:52 by miggonza          #+#    #+#             */
-/*   Updated: 2023/05/09 12:29:17 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/05/11 15:42:05 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	ft_lstadd_back2(t_list2 **lst, t_list2 *new)
 
 int	ft_lstsize2(t_list2 *lst)
 {
-	int	i;
+	int		i;
 	t_list2	*temp;
 
 	if (!lst)

@@ -6,7 +6,7 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 12:05:00 by miggonza          #+#    #+#             */
-/*   Updated: 2023/05/09 12:32:11 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/05/11 15:47:06 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int	ft_max_bites(t_list *list)
 	return (nbr_bites);
 }
 */
+
 static int	get_max_bits(t_list2 **stack)
 {
 	t_list2	*head;
@@ -46,10 +47,9 @@ static int	get_max_bits(t_list2 **stack)
 
 void	ft_testall(t_list2 **stack_a, t_list2 **stack_b)
 {
-	t_list2 *head;
-	int i;
-	int j;
-
+	t_list2	*head;
+	int		i;
+	int		j;
 	int		size;
 	int		max_bits;
 

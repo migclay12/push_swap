@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "../beginging/push_swap.h"
 
 int	ft_atoi(const char *str)
 {
@@ -32,10 +33,9 @@ int	ft_atoi(const char *str)
 	{
 		recive = ((str[c] - '0') + (recive * 10));
 		c++;
-		if (recive > 2147483647 && minus == 1)
-			return (-1);
-		if (recive > 2147483648 && minus == -1)
-			return (0);
+		if ((recive > 2147483647 && minus == 1)
+			|| (recive > 2147483648 && minus == -1))
+			ft_printerror("ERROR SIZE ATOI");
 	}
 	return (recive * minus);
 }

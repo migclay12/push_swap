@@ -6,13 +6,13 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 16:39:19 by miggonza          #+#    #+#             */
-/*   Updated: 2023/04/13 16:44:01 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/05/11 15:41:44 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sb(t_list2  **stack_b)
+void	sb(t_list2 **stack_b)
 {
 	ft_swap(stack_b);
 	write(1, "sb\n", 3);

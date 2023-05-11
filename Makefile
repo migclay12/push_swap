@@ -20,7 +20,7 @@ ${NAME}: ${OBJ}
 
 #COMPILE WITH ARGUMENTS
 exe: all
-		@./$(NAME) - 1 2 3
+		@./$(NAME) 3
 #5 3 4 2 1
 #2 4 3 1 5
 #2 4 3 5 1
@@ -34,6 +34,28 @@ fclean: clean
 		@rm -rf $(NAME)
 		@make -C $(LIB) fclean
 
+comp: fclean exe
+
 re: fclean all
 
 .PHONY: clean fclean all re
+
+
+#Invalid Characters
+#[1 2a 3                   ]        KO        KO	???
+#[a 1 2 3                  ]        KO        KO	???
+#[1 2 3 a                  ]        KO        KO	???
+#[- 1 2 3                  ]        KO        KO	???
+#[+ 1 2 3                  ]        KO        KO	???
+
+#Over INT_MAX/INT_MIN
+#[2147483648 2 1           ]        KO        KO	
+#[-2147483649 2 1          ]        KO        KO	
+
+#Over LONG_MAX/LONG_MIN
+#[+9223372036854775808 2 1 ]        KO        KO	
+#[-9223372036854775809 2 1 ]        KO        KO	
+
+#Repeated Numbers
+#[-1 -1 2                  ]        KO        KO	???
+#[+1 1 2                   ]        KO        KO	???

@@ -6,7 +6,7 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 19:50:01 by miggonza          #+#    #+#             */
-/*   Updated: 2023/05/09 12:35:48 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/05/11 16:55:23 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@ void	ft_add_index(t_list2 **stack_a)
 {
 	t_list2	*head;
 	t_list2	*moving;
-	int i;
+	int		i;
 
 	head = *stack_a;
 	while (head)
 	{
 		moving = *stack_a;
-		i  = 1;
+		i = 1;
 		while (moving)
 		{
 			if (head->number > moving->number)
@@ -30,7 +30,6 @@ void	ft_add_index(t_list2 **stack_a)
 			moving = moving->next;
 		}
 		head->index = i;
-		//printf("%d", head->index);
 		head = head->next;
 	}
 }
@@ -40,7 +39,7 @@ void	ft_sort_num(t_list2 **stack_a, int argc, char **argv)
 	t_list2	*new;
 	char	**idk;
 	int		i;
- 
+
 	i = 0;
 	if (argc == 2)
 		idk = ft_split(argv[1], ' ');
@@ -53,7 +52,6 @@ void	ft_sort_num(t_list2 **stack_a, int argc, char **argv)
 	{
 		new = ft_lstnew2(ft_atoi(idk[i]));
 		ft_lstadd_back2(stack_a, new);
-		//printf("%d\n", new->number);
 		i++;
 	}
 }
@@ -69,9 +67,9 @@ void	ft_print_stack(char c, t_list2 **stack)
 		printf("Stack_b: ");
 	if (!head)
 		printf("empty");
-	while(head)
+	while (head)
 	{
-		printf("%d(%d)-", head->number, head->index);
+		printf("%d(%d)	", head->number, head->index);
 		head = head->next;
 	}
 	printf("\n");
@@ -87,9 +85,9 @@ void	ft_length(t_list2 **stack_a, t_list2 **stack_b)
 		ft_test5(stack_a, stack_b);
 	else
 		ft_testall(stack_a, stack_b);
-
 }
-//MAKE SORT 2
+
+//REMOVE LIST1
 int	main(int argc, char **argv)
 {
 	t_list2	**stack_a;
@@ -106,9 +104,7 @@ int	main(int argc, char **argv)
 	ft_add_index(stack_a);
 
 	if (ft_sorted(stack_a))
-		return(0);
-	//ft_print_stack('a', stack_a);
-	//ft_print_stack('b', stack_b);
+		return (0);
 
 	ft_length(stack_a, stack_b);
 
