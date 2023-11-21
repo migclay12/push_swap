@@ -6,7 +6,7 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 20:59:11 by miggonza          #+#    #+#             */
-/*   Updated: 2023/05/11 17:15:07 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/11/15 11:26:50 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,17 +87,30 @@ void	ft_test3(t_list2 **stack_a)
 void	ft_test5(t_list2 **stack_a, t_list2 **stack_b)
 {
 	t_list2	*head;
+	int		min;
+	int		max;
 
-	head = *stack_a;
-	pb(stack_b, stack_a);
-	pb(stack_b, stack_a);
+	min = ft_find_min(stack_a);
+	max = ft_find_max(stack_a);
+	while (ft_lstsize2(*stack_a) != 3)
+	{
+		head = *stack_a;
+		if (max == head->index || head->index == 1)
+			pb(stack_b, stack_a);
+		else
+			ra(stack_a);
+	}
+	//ft_print_stack('a', stack_a);
 	ft_test3(stack_a);
 	//ft_print_stack('a', stack_a);
 	pa(stack_a, stack_b);
-	ft_test3(stack_a);
-
 	pa(stack_a, stack_b);
-	ft_test3(stack_a);
-	if (!ft_sorted(stack_a))
-		ft_test5(stack_a, stack_b);
+	head = *stack_a;
+	if (max == head->index)
+		ra(stack_a);
+	else
+	{
+		sa(stack_a);
+		ra(stack_a);
+	}
 }

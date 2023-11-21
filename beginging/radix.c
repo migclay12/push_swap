@@ -6,7 +6,7 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 12:05:00 by miggonza          #+#    #+#             */
-/*   Updated: 2023/05/11 17:07:13 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/11/15 11:24:45 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void	ft_testall(t_list2 **stack_a, t_list2 **stack_b)
 		while (j++ < size)
 		{
 			head = *stack_a;
-			if (((head->index >> i) & 1) == 1)
+			if (((head->index >> i) % 2) == 1)
 				ra(stack_a);
 			else
 				pb(stack_b, stack_a);
@@ -75,10 +75,16 @@ void	ft_testall(t_list2 **stack_a, t_list2 **stack_b)
 }
 
 /*
-    x & 1 produces a value that is either 1 or 0, depending on the least significant bit of x:
-    if the last bit is 1, the result of x & 1 is 1; otherwise, it is 0. This is a bitwise AND operation
+	ADD BEFORE if (((head->index >> i) % 2) == 1)
+		//if (((head->index >> i) & 1) == 1)
+	
+    x & 1 produces a value that is either 1 or 0, depending 
+	on the least significant bit of x:
+    if the last bit is 1, the result of x & 1 is 1; otherwise, 
+	it is 0. This is a bitwise AND operation
 
-    x >>= 1 means "set x to itself shifted by one bit to the right". The expression evaluates to the
+    x >>= 1 means "set x to itself shifted by one bit to the right".
+	The expression evaluates to the
     new value of x after the shift
 
 

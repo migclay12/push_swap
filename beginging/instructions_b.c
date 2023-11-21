@@ -6,7 +6,7 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 16:39:19 by miggonza          #+#    #+#             */
-/*   Updated: 2023/05/11 15:41:44 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/11/15 11:33:15 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,23 @@
 void	sb(t_list2 **stack_b)
 {
 	ft_swap(stack_b);
-	write(1, "sb\n", 3);
+	ft_printf("sb\n");
 }
 
 void	pb(t_list2 **stack_b, t_list2 **stack_a)
 {
 	ft_push(stack_b, stack_a);
-	write(1, "pb\n", 3);
+	ft_printf("pb\n");
 }
 
 void	rb(t_list2 **stack_b)
 {
 	ft_rotate(stack_b);
-	write(1, "rb\n", 3);
+	ft_printf("rb\n");
 }
 
 void	rrb(t_list2 **stack_b)
 {
 	ft_reverse_rotate(stack_b);
-	write(1, "rrb\n", 4);
+	ft_printf("rrb\n");
 }

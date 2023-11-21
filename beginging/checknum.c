@@ -6,7 +6,7 @@
 /*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 19:49:58 by miggonza          #+#    #+#             */
-/*   Updated: 2023/05/11 17:11:20 by miggonza         ###   ########.fr       */
+/*   Updated: 2023/11/15 11:01:29 by miggonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,6 @@ void	ft_printerror(char *error)
 {
 	ft_printf("%s\n", error);
 	exit(0);
-}
-
-int	ft_check_rep(int num, char **argv, int i)
-{
-	i++;
-	while (argv[i])
-	{
-		if (ft_atoi(argv[i]) == num)
-			return (1);
-		i++;
-	}
-	return (0);
 }
 
 int	ft_isnum(char *num)
@@ -46,6 +34,18 @@ int	ft_isnum(char *num)
 		i++;
 	}
 	return (1);
+}
+
+int	ft_check_rep(int num, char **argv, int i)
+{
+	i++;
+	while (argv[i])
+	{
+		if (ft_atoi(argv[i]) == num)
+			return (1);
+		i++;
+	}
+	return (0);
 }
 
 void	ft_get_num(int argc, char **argv)
