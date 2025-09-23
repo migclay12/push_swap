@@ -3,23 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   instructions.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 13:11:42 by miggonza          #+#    #+#             */
-/*   Updated: 2023/11/15 10:49:59 by miggonza         ###   ########.fr       */
+/*   Updated: 2025/09/24 01:24:42 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-	// t_list2	*temp;
-	// head = *stack;
-	// next = head->next;
-
-	// temp = head;
-	// head = head->next;
-	// temp->next = head;
-	// *stack = temp;
 
 void	ft_swap(t_list2 **stack)
 {
@@ -40,26 +31,26 @@ void	ft_swap(t_list2 **stack)
 
 void	ft_push(t_list2 **stack_to, t_list2 **stack_from)
 {
-	t_list2	*head_a;
-	t_list2	*head_b;
+	t_list2	*head_to;
+	t_list2	*head_from;
 	t_list2	*temp;
 
 	if (stack_from == NULL)
 		return ;
-	head_a = *stack_to;
-	head_b = *stack_from;
-	temp = head_b;
-	head_b = head_b->next;
-	*stack_from = head_b;
-	if (!head_a)
+	head_to = *stack_to;
+	head_from = *stack_from;
+	temp = head_from;
+	head_from = head_from->next;
+	*stack_from = head_from;
+	if (!head_to)
 	{
-		head_a = temp;
-		head_a->next = NULL;
-		*stack_to = head_a;
+		head_to = temp;
+		head_to->next = NULL;
+		*stack_to = head_to;
 	}
 	else
 	{
-		temp->next = head_a;
+		temp->next = head_to;
 		*stack_to = temp;
 	}
 }

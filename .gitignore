@@ -1,0 +1,55 @@
+# Object files
+*.o
+*.obj
+*.ko
+*.exe
+*.out
+
+# Dependency files
+*.d
+
+# Executables
+push_swap
+
+# Build directories
+build/
+bin/
+dist/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+
+# Libraries
+*.a
+*.lib
+*.so
+*.dll
+
+# Coverage files
+*.gcda
+*.gcno
+*.gcov
+
+# Debug files
+.gdb_history
+
+# Makefile generated files
+Makefile.backup

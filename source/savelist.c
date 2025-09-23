@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   savelist.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 11:13:51 by miggonza          #+#    #+#             */
-/*   Updated: 2023/11/15 11:26:12 by miggonza         ###   ########.fr       */
+/*   Updated: 2025/09/24 01:24:42 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,26 +15,25 @@
 void	ft_sort_num(t_list2 **stack_a, int argc, char **argv)
 {
 	t_list2	*new;
-	char	**idk;
+	char	**num;
 	int		i;
 
 	i = 0;
 	if (argc == 2)
-		idk = ft_split(argv[1], ' ');
+		num = ft_split(argv[1], ' ');
 	else
 	{
 		i = 1;
-		idk = argv;
+		num = argv;
 	}
-	while (idk[i])
+	while (num[i])
 	{
-		new = ft_lstnew2(ft_atoi(idk[i]));
+		new = ft_lstnew2(ft_atoi(num[i]));
 		ft_lstadd_back2(stack_a, new);
 		i++;
 	}
 }
 
-//WTF IS THIS FOR???
 void	ft_add_index(t_list2 **stack_a)
 {
 	t_list2	*head;
@@ -55,4 +54,18 @@ void	ft_add_index(t_list2 **stack_a)
 		head->index = i;
 		head = head->next;
 	}
+}
+
+void	ft_length(t_list2 **stack_a, t_list2 **stack_b)
+{
+	if (ft_lstsize2(*stack_a) == 2)
+		sa(stack_a);
+	else if (ft_lstsize2(*stack_a) == 3)
+		ft_test3(stack_a);
+	else if (ft_lstsize2(*stack_a) == 4)
+		ft_test4(stack_a, stack_b);
+	else if (ft_lstsize2(*stack_a) == 5)
+		ft_test5(stack_a, stack_b);
+	else
+		ft_testall(stack_a, stack_b);
 }

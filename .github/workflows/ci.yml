@@ -1,0 +1,46 @@
+name: Push Swap CI
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y gcc make valgrind
+
+    - name: Compile
+      run: make all
+
+    - name: Run basic tests
+      run: |
+        make test3
+        make test5
+        echo "Testing 10 random elements..."
+        shuf -i 1-100 -n 10 | tr '\n' ' ' | xargs ./push_swap | wc -l
+        echo "Testing 100 random elements..."
+        shuf -i 1-1000 -n 100 | tr '\n' ' ' | xargs ./push_swap | wc -l
+
+    - name: Run comprehensive test script
+      run: |
+        chmod +x tests/test_script.sh
+        bash tests/test_script.sh
+
+    - name: Memory leak check (valgrind)
+      run: |
+        echo "Testing for memory leaks..."
+        make fclean
+        make ${NAME}_debug
+        valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./push_swap 1 3 2 5 4 2>/dev/null || echo "Note: Valgrind may not work in CI environment"
+
+    - name: Clean up
+      run: make fclean

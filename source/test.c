@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 20:59:11 by miggonza          #+#    #+#             */
-/*   Updated: 2023/11/15 11:26:50 by miggonza         ###   ########.fr       */
+/*   Updated: 2025/09/24 01:24:42 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,22 +24,6 @@ int	ft_sorted(t_list2 **stack)
 		head = head->next;
 	}
 	return (1);
-}
-
-int	ft_find_min(t_list2 **stack)
-{
-	t_list2	*head;
-	int		min;
-
-	head = *stack;
-	min = head->index;
-	while (head != NULL)
-	{
-		if (head->index < min)
-			min = head->index;
-		head = head->next;
-	}
-	return (min);
 }
 
 int	ft_find_max(t_list2 **stack)
@@ -84,13 +68,27 @@ void	ft_test3(t_list2 **stack_a)
 		rra(stack_a);
 }
 
+void	ft_test4(t_list2 **stack_a, t_list2 **stack_b)
+{
+	t_list2	*head;
+
+	while (ft_lstsize2(*stack_a) != 3)
+	{
+		head = *stack_a;
+		if (head->index == 1)
+			pb(stack_b, stack_a);
+		else
+			ra(stack_a);
+	}
+	ft_test3(stack_a);
+	pa(stack_a, stack_b);
+}
+
 void	ft_test5(t_list2 **stack_a, t_list2 **stack_b)
 {
 	t_list2	*head;
-	int		min;
 	int		max;
 
-	min = ft_find_min(stack_a);
 	max = ft_find_max(stack_a);
 	while (ft_lstsize2(*stack_a) != 3)
 	{
@@ -100,9 +98,7 @@ void	ft_test5(t_list2 **stack_a, t_list2 **stack_b)
 		else
 			ra(stack_a);
 	}
-	//ft_print_stack('a', stack_a);
 	ft_test3(stack_a);
-	//ft_print_stack('a', stack_a);
 	pa(stack_a, stack_b);
 	pa(stack_a, stack_b);
 	head = *stack_a;

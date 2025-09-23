@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miggonza <miggonza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 19:49:55 by miggonza          #+#    #+#             */
-/*   Updated: 2023/11/15 11:20:54 by miggonza         ###   ########.fr       */
+/*   Updated: 2025/09/24 01:24:42 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,14 +56,14 @@ void	ft_reverse_rotate(t_list2 **stack);
 //SAVE LIST
 void	ft_sort_num(t_list2 **stack_a, int argc, char **argv);
 void	ft_add_index(t_list2 **stack_a);
+void	ft_length(t_list2 **stack_a, t_list2 **stack_b);
+void	ft_free_stacks(t_list2 **stack_a, t_list2 **stack_b);
 
 //TESTS
 int		ft_sorted(t_list2 **stack);
 void	ft_test3(t_list2 **stack_a);
+void	ft_test4(t_list2 **stack_a, t_list2 **stack_b);
 void	ft_test5(t_list2 **stack_a, t_list2 **stack_b);
 void	ft_testall(t_list2 **stack_a, t_list2 **stack_b);
-
-//MINE
-void	ft_print_stack(char c, t_list2 **stack);
 
 #endif
